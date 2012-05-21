@@ -7,6 +7,7 @@
 
   var fs = require('fs')
     , spawn = require('child_process').spawn
+    , path = require('path')
     , forEachAsync = require('forEachAsync')
     , util = require('util')
     , justOneTest = process.argv[2]
@@ -50,7 +51,7 @@
       return;
     }
 
-    ps = spawn(handler, [__dirname + '/tests/' + testfile], options);
+    ps = spawn(handler, [path.join(process.cwd(), 'tests', testfile)], options);
     ps.stdout.on('data', function (chunk) {
       console.log(chunk.toString('utf8'));
     });
