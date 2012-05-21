@@ -1,0 +1,27 @@
+{
+  "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.info)",
+  "name": "steve-tools",
+  "description": "A collection of tools for steve / nodejs apps",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coolaj86/steve-tools.git"
+  },
+  "bin": {
+    "mkjs": "bin/mkjs.sh",
+    "steve-test": "bin/run-tests.js",
+    "steve-init": "bin/steve-init.js"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "forEachAsync": "2.x",
+    "colors": "0.6.x"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

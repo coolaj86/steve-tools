@@ -1,0 +1,22 @@
+{
+  "author": "FOO-AUTHOR <FOO-A-EMAIL> (FOO-A-WEB)",
+  "name": "FOO-APP",
+  "description": "FOO-APP-DESC",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FOO-G-ORG/FOO-G-REPO.git"
+  },
+  "bin": {
+    "FOO-APP-server": "bin/server.js"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
