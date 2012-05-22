@@ -8,7 +8,8 @@
 
   var exec = require('child_process').exec
     , cnd = '[ ! -e "./server" ] && [ ! -e "./browser" ]'
-    , cmd = "rsync -a " + __dirname + "/../dummy-app/* ./"
+    , dir = process.argv[2] || './'
+    , cmd = "rsync -a " + __dirname + "/../dummy-app/* " + dir  + "/"
     , msg = 'steve init complete'
     , errmsg = 'no can do sparky... looks like steve has already been here'
     ;
