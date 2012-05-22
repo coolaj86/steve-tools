@@ -16,8 +16,10 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
+    "argparse": ">=0.1.0",
+    "colors": "0.6.x",
     "forEachAsync": "2.x",
-    "colors": "0.6.x"
+    "nodewatch": ">=0.1.0"
   },
   "devDependencies": {},
   "optionalDependencies": {},
