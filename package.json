@@ -10,6 +10,7 @@
   "bin": {
     "mkjs": "bin/mkjs.sh",
     "steve-test": "bin/run-tests.js",
+    "steve-watch":"bin/steve-watcher.js",
     "steve-init": "bin/steve-init.js"
   },
   "publishConfig": {
