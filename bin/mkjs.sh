@@ -6,10 +6,10 @@ then
   exit 1
 fi
 
-echo '/*jshint strict:true node:true es5:true onevar:true laxcomma:true laxbreak:true*/
-(function () {
+echo '(function () {
   "use strict";
 
 }());' > ${JSFILE}
+addjshint "${JSFILE}"
 #MODULE=`basename "$1" .js`
 #sed -i '' s/my-module-name/${MODULE}/ ${1}

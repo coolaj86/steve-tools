@@ -2,13 +2,14 @@
   "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.info)",
   "name": "steve-tools",
   "description": "A collection of tools for steve / nodejs apps",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/coolaj86/steve-tools.git"
   },
   "bin": {
     "mkjs": "bin/mkjs.sh",
+    "addjshint": "bin/addjshint.sh",
     "steve-test": "bin/run-tests.js",
     "steve-watch":"bin/steve-watcher.js",
     "steve-init": "bin/steve-init.js"
