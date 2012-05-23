@@ -10,14 +10,17 @@
   "bin": {
     "mkjs": "bin/mkjs.sh",
     "steve-test": "bin/run-tests.js",
+    "steve-watch":"bin/steve-watcher.js",
     "steve-init": "bin/steve-init.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "forEachAsync": "2.x",
+    "argparse": ">=0.1.0",
     "colors": "0.6.x",
+    "forEachAsync": "2.x",
+    "nodewatch": ">=0.1.0",
     "mkdirp": "0.3.x",
     "walk": "2.x",
     "fs.extra": "~1.0.1"
