@@ -15,6 +15,10 @@ pushd browser
   rm -rf "${WEBPUB}"
   mkdir -p "${WEBPUB}/"
 
+  rsync -a static/ "${WEBPUB}/"
+  # make sure there's always a favicon, even if it's broken
+  touch "${WEBPUB}/favicon.ico"
+
   jade index.jade
   mv index.html "${WEBPUB}/"
 
