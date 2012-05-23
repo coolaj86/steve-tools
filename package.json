@@ -17,7 +17,10 @@
   },
   "dependencies": {
     "forEachAsync": "2.x",
-    "colors": "0.6.x"
+    "colors": "0.6.x",
+    "mkdirp": "0.3.x",
+    "walk": "2.x",
+    "fs.extra": "~1.0.1"
   },
   "devDependencies": {},
   "optionalDependencies": {},
