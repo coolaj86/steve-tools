@@ -8,7 +8,8 @@
     , deploy
     ;
 
-  if (/win/.exec(process.platform)) {
+  if (/^win/.exec(process.platform)) {
+    console.log(process.platform);
     process.exit(1);
   }
 
