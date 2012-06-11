@@ -53,7 +53,7 @@
       if (err) {
         log('problem deploying', 'error');
         console.log(stderr);
-        return;
+        process.exit(1);
       }
       log('redeployment complete', 'action');
       watch.onChange(fileChanged);
