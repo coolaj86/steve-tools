@@ -11,7 +11,7 @@ popd
 #popd
 
 pushd browser
-  WEBPUB='../webclient-deployed'
+  WEBPUB='../public'
 
   echo -n "Killing off old cruft..."
   rm -rf "${WEBPUB}"

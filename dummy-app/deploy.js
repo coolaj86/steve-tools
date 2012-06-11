@@ -9,6 +9,7 @@
     ;
 
   if (/^win/.exec(process.platform)) {
+    console.log('Windows not supported yet');
     console.log(process.platform);
     process.exit(1);
   }

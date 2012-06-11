@@ -7,6 +7,6 @@ then
 fi
 
 TMPFILE="/tmp/${RANDOM}.tmp"
-echo '/*jshint strict:true node:true es5:true onevar:true laxcomma:true laxbreak:true*/' > "${TMPFILE}"
+echo '/*jshint strict:true node:true es5:true onevar:true laxcomma:true laxbreak:true eqeqeq:true immed:true latedef:true*/' > "${TMPFILE}"
 cat "${JSFILE}" >> "${TMPFILE}"
 mv "${TMPFILE}" "${JSFILE}"

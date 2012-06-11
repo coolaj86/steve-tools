@@ -5,11 +5,11 @@
 (function () {
   "use strict";
 
-  var connect = require('steve')
-    , app = connect()
+  var steve = require('./steve')
+    , connect = require('connect')
+    , app = connect.createServer()
     ;
 
-  connect.router = require('connect_router');
 
   function getHello(request, response) {
     response.json(request.params);
@@ -20,9 +20,10 @@
     rest.get('/hello/:name?', getHello);
   }
 
-  app.use(connect.favicon());
-  app.use(connect.static(__dirname + '/../../webclient-deployed'));
-  app.use(connect.router(router));
+  app
+    .use(steve)
+    .use(connect.router(router))
+    ;
 
   module.exports = app;
 }());

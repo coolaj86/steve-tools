@@ -1,5 +1,5 @@
-# https://raw.github.com/github/gitignore/master/Global/Linux.gitignore
-public
+#!/bin/bash
+echo 'webclient-deployed
 
 .*
 !.gitignore
@@ -38,3 +38,10 @@ npm-debug.log
 pakmanaged.*
 node_modules
 !.npmignore
+cat 
+' >> .gitignore
+
+echo '# overrides .gitignore for NPM
+node_modules
+.git
+' >> .npmignore
