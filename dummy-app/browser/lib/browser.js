@@ -6,10 +6,17 @@
   "use strict";
 
   var $ = require('ender')
+    , domReady = require('domready')
     , serializeForm = require('serialize-form')
     , pure = require('pure').$p
     , request = require('ahr2')
     ;
 
+  function init() {
+    console.log('It is now safe to assign events and run other DOM code.');
+    console.log('(It is recommended that you do so here.)');
+  }
+
   console.log('Steve loves you!');
+  domReady(init);
 }());
