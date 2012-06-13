@@ -2,7 +2,7 @@
   "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.info)",
   "name": "steve-tools",
   "description": "A collection of tools for steve / nodejs apps",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/coolaj86/steve-tools.git"
@@ -12,20 +12,26 @@
     "addjshint": "bin/addjshint.sh",
     "addignore": "bin/steve-addignore.sh",
     "steve-test": "bin/run-tests.js",
-    "steve-watch":"bin/steve-watcher.js",
+    "steve-watch": "bin/steve-watcher.js",
+    "steve-bump": "bin/steve-bump.js",
     "steve-init": "bin/steve-init.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "argparse": ">=0.1.0",
+    "argparse": ">=0.1.2 <0.2.0",
     "colors": "0.6.x",
-    "forEachAsync": "2.x",
-    "nodewatch": ">=0.1.0",
+    "forEachAsync": ">=2.2.0 <2.3.0",
+    "nodewatch": ">=0.1.0 <0.2.0",
     "mkdirp": "0.3.x",
     "walk": "2.x",
-    "fs.extra": "~1.0.1"
+    "fs.extra": "~1.0.1",
+    "future": ">=2.3.1 <2.4.0",
+    "semver": ">=1.0.14 <1.1.0",
+    "npm": ">=1.1.25 <1.2.0",
+    "read": ">=0.0.3 <0.1.0",
+    "sequence": ">=2.2.1 <2.3.0"
   },
   "devDependencies": {},
   "optionalDependencies": {},

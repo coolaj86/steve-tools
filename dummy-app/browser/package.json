@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git://github.com/DUMMYORG/DUMMYAPP.git"
   },
-  "main": "lib/index",
+  "main": "lib/browser",
   "scripts": {
     "test": "run-tests"
   },
@@ -19,7 +19,9 @@
     "bonzo": "1.x",
     "qwery": "3.x",
     "bean": "0.4.x",
-    "domready": "0.2.x"
+    "domready": "0.2.x",
+    "serialize-form": ">=1.1.1 <1.2.0",
+    "pure": ">=2.67.0 <2.68.0"
   },
   "dependencies": {},
   "devDependencies": {},

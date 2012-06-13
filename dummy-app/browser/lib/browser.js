@@ -6,7 +6,10 @@
   "use strict";
 
   var $ = require('ender')
+    , serializeForm = require('serialize-form')
+    , pure = require('pure').$p
     , request = require('ahr2')
     ;
 
+  console.log('Steve loves you!');
 }());
