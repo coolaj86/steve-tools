@@ -14,7 +14,7 @@
 
   function init() {
     console.log('It is now safe to assign events and run other DOM code.');
-    console.log('(It is recommended that you do so here.)');
+    // It is recommended that you do so here.
   }
 
   console.log('Steve loves you!');
