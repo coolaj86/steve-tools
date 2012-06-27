@@ -8,6 +8,8 @@
   require('http-json')(require('http'));
 
   var connect = require('connect')
+    , fs = require('fs')
+    , path = require('path')
     , cookielessSession = require('connect-cookieless-session')
     , pathname = require('connect-pathname')
     , gcf = require('express-chromeframe')
@@ -16,7 +18,46 @@
     , cors = xcors()
     , session = cookielessSession()
     , app = connect()
+    , version = JSON.parse(
+          fs.readFileSync(
+              path.join(__dirname, '..', 'package.json')
+            , 'utf8'
+          )
+      ).version
+    , semver
     ;
+
+  function parseSemver(version) {
+    // semver, major, minor, patch
+    // https://github.com/mojombo/semver/issues/32
+    // https://github.com/isaacs/node-semver/issues/10
+    // optional v
+    var m = /^\s*(v)?([0-9]+)(\.([0-9]+))(\.([0-9]+))(([\-+])([a-zA-Z0-9\.]+))?\s*$/.exec(version) || []
+      , ver = {
+            semver: m[0] || version
+          , major: m[2]
+          , minor: m[4]
+          , patch: m[6]
+          , revision: m[7]
+        }
+      ;
+
+    if (!/^v/.test(ver.semver)) {
+      ver.semver = 'v' + ver.semver;
+    }
+
+    if ('+' === m[8]) {
+      ver.build = m[9];
+    }
+
+    if ('-' === m[8]) {
+      ver.release = m[9];
+    }
+
+    return ver;
+  }
+
+  semver = parseSemver(version);
 
   connect.router = require('connect_router');
   connect.corsPolicy = cors.config;
@@ -35,6 +76,9 @@
     .use(connect.favicon())
     .use(connect.static(__dirname + '/../public'))
     .use(connect.static(__dirname + '/../var/public'))
+    .use('/version', function (req, res, next) {
+      res.json(semver);
+    })
     ;
 
   module.exports = app;

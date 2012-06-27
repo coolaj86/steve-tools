@@ -6,10 +6,12 @@
   "use strict";
 
   var $ = require('ender')
+    , _ = require('underscore')
     , domReady = require('domready')
-    , serializeForm = require('serialize-form')
     , pure = require('pure').$p
     , request = require('ahr2')
+    , forEachAsync = require('forEachAsync')
+    , serializeForm = require('serialize-form')
     ;
 
   function init() {

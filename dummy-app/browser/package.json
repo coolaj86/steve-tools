@@ -21,7 +21,9 @@
     "bean": "0.4.x",
     "domready": "0.2.x",
     "serialize-form": ">=1.1.1 <1.2.0",
-    "pure": ">=2.67.0 <2.68.0"
+    "pure": ">=2.67.0 <2.68.0",
+    "underscore": ">=1.3.3 <1.4.0",
+    "forEachAsync": ">=2.2.0 <2.3.0"
   },
   "dependencies": {},
   "devDependencies": {},
