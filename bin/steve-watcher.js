@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-/*jshint laxcomma:true es5:true node:true*/
-
+/*jshint strict:true node:true es5:true onevar:true laxcomma:true laxbreak:true eqeqeq:true immed:true latedef:true*/
 (function () {
+  "use strict";
+
   var ArgumentParser = require('argparse').ArgumentParser
     , watch = require('nodewatch')
     , colors = require('colors')
