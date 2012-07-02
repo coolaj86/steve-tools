@@ -57,6 +57,10 @@
     return ver;
   }
 
+  function getVersion(res, req, next) {
+    res.json(semver);
+  }
+
   semver = parseSemver(version);
 
   connect.router = require('connect_router');
@@ -73,12 +77,10 @@
     .use(connect.urlencoded())
     .use(cors)
     .use(session)
-    .use(connect.favicon())
     .use(connect.static(__dirname + '/../public'))
     .use(connect.static(__dirname + '/../var/public'))
-    .use('/version', function (req, res, next) {
-      res.json(semver);
-    })
+    .use('/version', getVersion)
+    .use(connect.favicon())
     ;
 
   module.exports = app;
