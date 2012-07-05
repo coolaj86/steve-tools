@@ -29,7 +29,13 @@
     "forEachAsync": ">=2.2.0 <2.3.0",
     "optimist": ">=0.3.4 <0.4.0",
     "read": ">=0.1.0 <0.2.0",
-    "sequence": ">=2.2.1 <2.3.0"
+    "sequence": ">=2.2.1 <2.3.0",
+    "npm": "1.x",
+    "wrench": "1.x",
+    "jade": "0.26.x",
+    "less": "1.x",
+    "pakman": "0.8.x",
+    "uglify-js": "1.x"
   },
   "main": "server/server",
   "devDependencies": {},

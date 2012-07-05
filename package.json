@@ -2,7 +2,7 @@
   "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.info)",
   "name": "steve-tools",
   "description": "A collection of tools for steve / nodejs apps",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/coolaj86/steve-tools.git"
@@ -15,7 +15,8 @@
     "steve-watch": "bin/steve-watcher.js",
     "steve-bump": "bin/steve-bump.js",
     "steve-add": "bin/steve-add.js",
-    "steve-init": "bin/steve-init.js"
+    "steve-init": "bin/steve-init.js",
+    "steve-deploy": "bin/steve-deploy.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
@@ -33,7 +34,12 @@
     "npm": ">=1.1.25 <1.2.0",
     "read": ">=0.0.3 <0.1.0",
     "sequence": ">=2.2.1 <2.3.0",
-    "ahr2": ">=2.3.1 <2.4.0"
+    "ahr2": ">=2.3.1 <2.4.0",
+    "wrench": "1.x",
+    "jade": "0.26.x",
+    "less": "1.x",
+    "pakman": "0.8.x",
+    "uglify-js": "1.x"
   },
   "devDependencies": {},
   "optionalDependencies": {},
