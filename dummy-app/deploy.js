@@ -187,7 +187,9 @@
       });
 
       console.log('Compiling LESS...');
+      process.chdir('browser');
       compileLess(function (err) {
+        process.chdir('..');
         if (err) {
           console.error('Error compiling less:');
           console.error(err);
