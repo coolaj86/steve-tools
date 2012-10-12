@@ -57,7 +57,7 @@
     return ver;
   }
 
-  function getVersion(res, req, next) {
+  function getVersion(req, res, next) {
     res.json(semver);
   }
 
