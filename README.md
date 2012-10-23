@@ -35,9 +35,14 @@ Add `jshint` comments to an existing js file
 
     addjshint my-module.js
 
-LICENSE
----
+License
+===
 
-MIT / Apache2
+Copyright AJ ONeal 2011-2012
 
-"JSON's Best Friend" (TM) is a tradmark owned by AJ ONeal in relation to Steve, the web-application framework.
+This project is available under the MIT and Apache v2 licenses.
+
+  * http://www.opensource.org/licenses/mit-license.php
+  * http://www.apache.org/licenses/LICENSE-2.0.html
+
+"JSON's Best Friend" (TM) is a tradmark owned by AJ ONeal in relation to Steve, the web-application framework and toolchain.

@@ -2,7 +2,7 @@
   "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.info)",
   "name": "steve-tools",
   "description": "A collection of tools for steve / nodejs apps",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/coolaj86/steve-tools.git"
@@ -45,5 +45,15 @@
   "optionalDependencies": {},
   "engines": {
     "node": "*"
-  }
+  },
+  "licenses": [
+    {   
+        "type": "MIT",
+        "url" : "http://www.opensource.org/licenses/mit-license.php"
+    },  
+    {   
+        "type": "Apache License, Version 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }   
+  ]
 }

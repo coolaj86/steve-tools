@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/*jshint node:true */
+/*jshint strict:true node:true es5:true onevar:true laxcomma:true laxbreak:true eqeqeq:true immed:true latedef:true*/
 (function () {
   'use strict';
 
@@ -18,21 +18,17 @@
         'static'
       ];
 
-  function fixupPath(dir) {
-    return path.resolve(process.cwd(), dir);
-  }
-
   function npmInstall(cb, dir) {
     npm.load(function () {
       npm.install(dir, cb);
     });
   }
 
-  function prep(cb) {
+  function prep(cb, cwd) {
     // make sure everything is relative to the cwd
-    publicDir = fixupPath(publicDir);
-    browserDir = fixupPath(browserDir);
-    staticDir = fixupPath(staticDir);
+    publicDir = path.resolve(cwd, publicDir);
+    browserDir = path.resolve(cwd, browserDir);
+    staticDir = path.resolve(cwd, staticDir);
 
     // npm install in the current dir to get deps
     npmInstall(cb, '.');
@@ -51,7 +47,7 @@
     }
   }
 
-  function prepFs() {
+  function prepFs(cwd) {
     console.log('Deleting generated files...');
     try {
       // delete any old stuff
@@ -63,7 +59,7 @@
     // make public/static directories
     dirs.forEach(function (dir) {
       try {
-        wrench.mkdirSyncRecursive(fixupPath(dir));
+        wrench.mkdirSyncRecursive(path.resolve(cwd, dir));
       } catch (e) {
         // whatever
       }
@@ -166,15 +162,17 @@
     return pro.gen_code(ast);
   }
 
-  function deploy(cb, cwd) {
-    if (cwd) {
-      process.chdir(cwd);
+  function deploy(cb, config) {
+    if (config.cwd) {
+      process.chdir(config.cwd);
+    } else {
+      config.cwd = process.cwd();
     }
 
     // npm install stuff
     prep(function () {
       // copy static files, create directories, etc
-      prepFs();
+      prepFs(config.cwd);
 
       console.log('Compiling Jade...');
       fs.readdirSync(browserDir).forEach(function (f) {
@@ -201,7 +199,6 @@
           var header = "var global = Function('return this;')();",
               outJsPath = path.join(publicDir, 'pakmanaged.js'),
               minJsPath = path.join(publicDir, 'pakmanaged.min.js'),
-              enderPath = path.join(__dirname, 'lib/ender.js'),
               outJs,
               minJs,
               ender;
@@ -210,7 +207,7 @@
               throw err;
           }
 
-          ender = fs.readFileSync(enderPath, 'utf8');
+          ender = fs.readFileSync(config.enderPath, 'utf8');
           outJs = util.format('%s\n%s\n%s', header, ender, s);
 
           fs.writeFileSync(outJsPath, outJs);
@@ -223,15 +220,20 @@
           console.log('Package build successful!');
         }, browserDir);
       }, path.join(browserDir, 'style.less'), path.join(publicDir, 'style.css'));
-    });
+    }, config.cwd);
   }
 
   if (module === require.main) {
-    deploy(function (err) {
-      if (err) {
-        process.exit(1);
-      }
-    });
+    deploy(
+        function (err) {
+          if (err) {
+            process.exit(1);
+          }
+        }
+      , {
+            enderPath: path.join(__dirname, 'lib/ender.js')
+        }
+    );
   }
 
   module.exports = deploy;
